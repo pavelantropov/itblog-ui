@@ -1,11 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
+import TopBar from "./features/layout/TopBar";
 
 function App() {
   return (
     <div className="App">
+      <TopBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
