@@ -1,5 +1,10 @@
 import { DefaultBlogPosts } from "./testData";
-import { FetchBlogPostResponse, FetchBlogPostsResponse } from "./types";
+import {
+  CreateBlogPostRequest,
+  CreateBlogPostResponse,
+  FetchBlogPostResponse,
+  FetchBlogPostsResponse,
+} from "./types";
 
 export function fetchBlogPost(
   blogPostId: string
