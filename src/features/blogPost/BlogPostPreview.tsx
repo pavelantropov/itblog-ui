@@ -1,5 +1,6 @@
-import { Link, Typography } from "@mui/material";
-import * as React from "react";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 interface BlogPostPreviewProps {
   blogPostId: string;
@@ -27,6 +28,7 @@ export default function BlogPostPreview({
       <Typography variant="body1" gutterBottom>
         {body ?? "-"}
       </Typography>
+      <Divider sx={{ mt: "20px", mb: "10px" }} />
     </>
   );
 }
