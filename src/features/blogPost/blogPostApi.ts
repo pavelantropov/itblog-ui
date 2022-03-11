@@ -6,16 +6,15 @@ import {
   FetchBlogPostsResponse,
 } from "./types";
 
-export function fetchBlogPost(
+export async function fetchBlogPost(
   blogPostId: string
 ): Promise<FetchBlogPostResponse> {
   if (process.env.NODE_ENV === "test" || true) {
     return new Promise<FetchBlogPostResponse>((resolve) => {
       let blogPost;
 
-      DefaultBlogPosts.forEach(post => {
-        if (post.blogPostId === blogPostId)
-          blogPost = post;
+      DefaultBlogPosts.forEach((post) => {
+        if (post.blogPostId === blogPostId) blogPost = post;
       });
 
       resolve({
@@ -23,11 +22,14 @@ export function fetchBlogPost(
       } as FetchBlogPostResponse);
     });
   } else {
-    throw new Error("Not implemented");
+    return await fetch(`${process.env.REACT_APP_API_URI}/api/tasks/${blogPostId}`, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    }).then((res) => res.json());
   }
 }
 
-export function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
+export async function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
   if (process.env.NODE_ENV === "test" || true) {
     return new Promise<FetchBlogPostsResponse>((resolve) => {
       resolve({
@@ -35,7 +37,11 @@ export function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
       } as FetchBlogPostsResponse);
     });
   } else {
-    throw new Error("Not implemented");
+    return await fetch(`${process.env.REACT_APP_API_URI}/api/tasks`, {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    }).then((res) => res.json());
+  }
 }
 
 export async function createBlogPost(
