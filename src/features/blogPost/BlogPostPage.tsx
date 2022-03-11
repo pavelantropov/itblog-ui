@@ -20,7 +20,7 @@ export default function BlogPostPage() {
         </Typography>
         <Typography variant="subtitle1" gutterBottom component="div">
           Posted:{" "}
-          {blogPost?.creationDate ? blogPost.creationDate.toLocaleDateString() : "unknown"}
+          {blogPost?.creationDate ? blogPost.creationDate.toLocaleString() : "unknown"}
         </Typography>
         <Typography variant="body1" gutterBottom>
           {blogPost?.body ?? "-"}
