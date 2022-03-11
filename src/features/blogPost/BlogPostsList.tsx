@@ -1,6 +1,5 @@
-import { Divider } from "@mui/material";
-import { Box } from "@mui/system";
 import * as React from "react";
+import Box from "@mui/material/Box";
 import { fetchBlogPosts } from "./blogPostApi";
 import BlogPostPreview from "./BlogPostPreview";
 import { BlogPost } from "./types";
@@ -14,21 +13,16 @@ export default function BlogPostsList() {
 
   return (
     <>
-      <Box sx={{ width: "100%", maxWidth: 1000, ml: "3vw", mt: "3vh" }}>
-        {blogPosts.length > 0 &&
-          blogPosts.map((blogPost, index) => (
-            <>
-              <BlogPostPreview
-                key={`blogPost_${index}`}
-                blogPostId={blogPost.blogPostId}
-                title={blogPost.title}
-                body={blogPost.body}
-                creationDate={blogPost.creationDate}
-              />
-              <Divider sx={{ mt: "2vh", mb: "1vh" }} />
-            </>
-          ))}
-      </Box>
+      {blogPosts.length > 0 &&
+        blogPosts.map((blogPost, index) => (
+          <BlogPostPreview
+            key={`blogPost_${index}`}
+            blogPostId={blogPost.blogPostId}
+            title={blogPost.title}
+            body={blogPost.body}
+            creationDate={blogPost.creationDate}
+          />
+        ))}
     </>
   );
 }

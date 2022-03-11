@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import { fetchBlogPost } from "./blogPostApi";
@@ -14,18 +14,18 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <Box sx={{ width: "100%", maxWidth: 1000, ml: "3vw", mt: "3vh" }}>
-        <Typography variant="h1" component="div" gutterBottom>
-          {blogPost?.title ?? "***"}
-        </Typography>
-        <Typography variant="subtitle1" gutterBottom component="div">
-          Posted:{" "}
-          {blogPost?.creationDate ? blogPost.creationDate.toLocaleString() : "unknown"}
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {blogPost?.body ?? "-"}
-        </Typography>
-      </Box>
+      <Typography variant="h1" component="div" gutterBottom>
+        {blogPost?.title ?? "***"}
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom component="div">
+        Posted:{" "}
+        {blogPost?.creationDate
+          ? blogPost.creationDate.toLocaleString()
+          : "unknown"}
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        {blogPost?.body ?? "-"}
+      </Typography>
     </>
   );
 }
