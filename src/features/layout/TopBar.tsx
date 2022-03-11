@@ -6,16 +6,16 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
-import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
-import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Divider, Link } from "@mui/material";
+import CreateIcon from "@mui/icons-material/Create";
+import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
+import { useNavigate } from "react-router";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function TopBar() {
+  const navigate = useNavigate();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -79,6 +81,10 @@ export default function TopBar() {
 
   const handleMobileMenuOpen = (event: React.SyntheticEvent<any>) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const handleCreateBlogPost = () => {
+    navigate("create");
   };
 
   const menuId = "primary-search-account-menu";
@@ -122,25 +128,15 @@ export default function TopBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={handleCreateBlogPost}>
         <IconButton
           size="large"
-          aria-label="show 17 new notifications"
+          aria-label="create a blog post"
           color="inherit"
         >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+          <CreateIcon />
         </IconButton>
-        <p>Notifications</p>
+        <p>Create a blog post</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -193,21 +189,11 @@ export default function TopBar() {
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
-              aria-label="show 4 new mails"
+              aria-label="create a blog post"
               color="inherit"
+              onClick={handleCreateBlogPost}
             >
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon />
-              </Badge>
+              <CreateIcon />
             </IconButton>
             <IconButton
               size="large"
