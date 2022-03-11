@@ -15,7 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Divider } from "@mui/material";
+import { Divider, Link } from "@mui/material";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -176,7 +176,9 @@ export default function TopBar() {
             component="div"
             sx={{ display: { xs: "none", sm: "block" } }}
           >
-            Antropov IT Blog
+            <Link href="/" color="white" underline="none">
+              Antropov IT Blog
+            </Link>
           </Typography>
           <Search>
             <SearchIconWrapper>
