@@ -1,4 +1,5 @@
-import { FetchBlogPostResponse } from "./types";
+import { DefaultBlogPosts } from "./testData";
+import { FetchBlogPostResponse, FetchBlogPostsResponse } from "./types";
 
 export function fetchBlogPost(
   blogPostId: string
@@ -14,6 +15,18 @@ export function fetchBlogPost(
       resolve({
         blogPost,
       } as FetchBlogPostResponse);
+    });
+  } else {
+    throw new Error("Not implemented");
+  }
+}
+
+export function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
+  if (process.env.NODE_ENV === "test" || true) {
+    return new Promise<FetchBlogPostsResponse>((resolve) => {
+      resolve({
+        blogPosts: DefaultBlogPosts,
+      } as FetchBlogPostsResponse);
     });
   } else {
     throw new Error("Not implemented");

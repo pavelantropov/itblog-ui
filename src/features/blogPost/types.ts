@@ -8,3 +8,7 @@ export interface BlogPost {
 export interface FetchBlogPostResponse {
   blogPost: BlogPost;
 }
+
+export interface FetchBlogPostsResponse {
+  blogPosts: BlogPost[];
+}
