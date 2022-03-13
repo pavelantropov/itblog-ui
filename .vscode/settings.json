@@ -1,0 +1,8 @@
+{
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ],
+  "appService.defaultWebAppToDeploy": "/subscriptions/9e8c541b-9a9b-417e-a1d2-c06eed8f7551/resourceGroups/antropov-itblog-rg/providers/Microsoft.Web/sites/antropov-itblog-ui",
+  "appService.deploySubpath": "."
+}
