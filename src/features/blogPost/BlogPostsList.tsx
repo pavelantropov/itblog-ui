@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import { fetchBlogPosts } from "./blogPostApi";
 import BlogPostPreview from "./BlogPostPreview";
 import { BlogPost } from "./types";
