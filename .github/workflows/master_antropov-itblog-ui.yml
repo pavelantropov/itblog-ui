@@ -28,7 +28,9 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip release.zip ./* -qr -x "node_modules/*" ".env"
+      # We exclude node_modules and dist because the Azure Oryx/Kudu deploy runs npm install and rebuilds everything anyway...
+      # If we zip them we just increase the size of the zip file and it's not needed
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -50,7 +52,9 @@ jobs:
           name: node-app
 
       - name: unzip artifact for deployment
-        run: unzip release.zip
+        run: |
+          unzip -q release.zip
+          rm release.zip
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
