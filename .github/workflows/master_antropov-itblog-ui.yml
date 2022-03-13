@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'antropov-itblog-ui'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B7B1660572C746A18E0581F598DE215D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29E37FFEB1D9495CAA960076D14DCC02 }}
           package: .
