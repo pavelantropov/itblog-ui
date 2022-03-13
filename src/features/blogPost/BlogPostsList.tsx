@@ -16,7 +16,7 @@ export default function BlogPostsList() {
         blogPosts.map((blogPost, index) => (
           <BlogPostPreview
             key={`blogPost_${index}`}
-            blogPostId={blogPost.blogPostId}
+            blogPostId={blogPost.id}
             title={blogPost.title}
             body={blogPost.body}
             creationDate={blogPost.creationDate}

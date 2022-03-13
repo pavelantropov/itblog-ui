@@ -14,7 +14,7 @@ export async function fetchBlogPost(
       let blogPost;
 
       DefaultBlogPosts.forEach((post) => {
-        if (post.blogPostId === blogPostId) blogPost = post;
+        if (post.id === blogPostId) blogPost = post;
       });
 
       resolve({
