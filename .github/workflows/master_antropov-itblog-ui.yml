@@ -51,6 +51,11 @@ jobs:
         with:
           name: node-app
 
+      - name: Unzip artifact for deployment
+        run: |
+          unzip -q release.zip
+          rm release.zip
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -58,4 +63,4 @@ jobs:
           app-name: 'antropov-itblog-ui'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_29E37FFEB1D9495CAA960076D14DCC02 }}
-          package: release.zip
+          package: .
