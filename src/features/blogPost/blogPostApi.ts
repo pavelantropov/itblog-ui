@@ -1,5 +1,6 @@
 import { DefaultBlogPosts } from "./testData";
 import {
+  BlogPost,
   CreateBlogPostRequest,
   CreateBlogPostResponse,
   FetchBlogPostResponse,
@@ -8,18 +9,16 @@ import {
 
 export async function fetchBlogPost(
   blogPostId: string
-): Promise<FetchBlogPostResponse> {
+): Promise<BlogPost | undefined> {
   if (process.env.NODE_ENV === "test") {
-    return new Promise<FetchBlogPostResponse>((resolve) => {
+    return new Promise<BlogPost | undefined>((resolve) => {
       let blogPost;
 
       DefaultBlogPosts.forEach((post) => {
         if (post.id === blogPostId) blogPost = post;
       });
 
-      resolve({
-        blogPost: blogPost ?? DefaultBlogPosts[0],
-      } as FetchBlogPostResponse);
+      resolve(blogPost);
     });
   } else {
     return await fetch(`${process.env.REACT_APP_API_URL}/api/blogPosts/${blogPostId}`, {

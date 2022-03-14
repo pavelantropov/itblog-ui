@@ -10,7 +10,7 @@ export default function BlogPostPage() {
   const [blogPost, setBlogPost] = React.useState<BlogPost>();
 
   React.useEffect(() => {
-    fetchBlogPost(blogPostId!).then((res) => setBlogPost(res.blogPost));
+    fetchBlogPost(blogPostId!).then((res) => setBlogPost(res));
   }, [blogPostId]);
 
   return (
