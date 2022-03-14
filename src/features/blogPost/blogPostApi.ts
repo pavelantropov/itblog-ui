@@ -22,7 +22,7 @@ export async function fetchBlogPost(
       } as FetchBlogPostResponse);
     });
   } else {
-    return await fetch(`${process.env.REACT_APP_API_URI}/api/blogPosts/${blogPostId}`, {
+    return await fetch(`${process.env.REACT_APP_API_URL}/api/blogPosts/${blogPostId}`, {
       method: "GET",
       headers: { Accept: "application/json" },
     }).then((res) => res.json());
@@ -37,7 +37,7 @@ export async function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
       } as FetchBlogPostsResponse);
     });
   } else {
-    return await fetch(`${process.env.REACT_APP_API_URI}/api/blogPosts`, {
+    return await fetch(`${process.env.REACT_APP_API_URL}/api/blogPosts`, {
       method: "GET",
       headers: { Accept: "application/json" },
     }).then((res) => res.json());
