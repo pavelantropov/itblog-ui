@@ -3,6 +3,10 @@ export interface BlogPost {
   title?: string;
   body?: string;
   creationDate?: Date;
+  lastUpdateDate?: Date;
+  tags?: string[];
+  author?: string;
+	isDeleted?: boolean;
 }
 
 export interface FetchBlogPostResponse {
