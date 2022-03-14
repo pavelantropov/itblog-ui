@@ -1,5 +1,5 @@
 import "./App.css";
-import BlogPostPage from "./features/blogPost/BlogPostPage";
+import BlogPostPage from "./features/blogPost/BlogPost";
 import Layout from "./features/layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import CreateBlogPost from "./features/blogPost/CreateBlogPost";
