@@ -9,7 +9,7 @@ import {
 export async function fetchBlogPost(
   blogPostId: string
 ): Promise<FetchBlogPostResponse> {
-  if (process.env.NODE_ENV === "test" || true) {
+  if (process.env.NODE_ENV === "test") {
     return new Promise<FetchBlogPostResponse>((resolve) => {
       let blogPost;
 
@@ -22,7 +22,7 @@ export async function fetchBlogPost(
       } as FetchBlogPostResponse);
     });
   } else {
-    return await fetch(`${process.env.REACT_APP_API_URI}/api/tasks/${blogPostId}`, {
+    return await fetch(`${process.env.REACT_APP_API_URI}/api/blogPosts/${blogPostId}`, {
       method: "GET",
       headers: { Accept: "application/json" },
     }).then((res) => res.json());
@@ -30,14 +30,14 @@ export async function fetchBlogPost(
 }
 
 export async function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
-  if (process.env.NODE_ENV === "test" || true) {
+  if (process.env.NODE_ENV === "test") {
     return new Promise<FetchBlogPostsResponse>((resolve) => {
       resolve({
         blogPosts: DefaultBlogPosts,
       } as FetchBlogPostsResponse);
     });
   } else {
-    return await fetch(`${process.env.REACT_APP_API_URI}/api/tasks`, {
+    return await fetch(`${process.env.REACT_APP_API_URI}/api/blogPosts`, {
       method: "GET",
       headers: { Accept: "application/json" },
     }).then((res) => res.json());
@@ -47,7 +47,7 @@ export async function fetchBlogPosts(): Promise<FetchBlogPostsResponse> {
 export async function createBlogPost(
   params: CreateBlogPostRequest
 ): Promise<CreateBlogPostResponse> {
-  if (process.env.NODE_ENV === "test" || true) {
+  if (process.env.NODE_ENV === "test") {
     return new Promise<CreateBlogPostResponse>((resolve) => {
       resolve({} as CreateBlogPostResponse);
     });
