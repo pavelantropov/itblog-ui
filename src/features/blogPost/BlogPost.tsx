@@ -20,13 +20,13 @@ export default function BlogPostPage() {
         Posted:{" "}
         {blogPost?.creationDate
           ? blogPost.creationDate.toLocaleString()
-          : "unknown"}
+          : "-"}
       </Typography>
       <Typography variant="body2" mb={2}>
         Last update:{" "}
         {blogPost?.lastUpdateDate
           ? blogPost.lastUpdateDate.toLocaleString()
-          : "unknown"}
+          : "-"}
       </Typography>
       <Typography variant="body1" mb={1.5}>
         {blogPost?.body ?? "-"}
