@@ -83,6 +83,10 @@ export default function TopBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const handleGoToMainPage = () => {
+    navigate("/");
+  };
+
   const handleCreateBlogPost = () => {
     navigate("create");
   };
@@ -170,11 +174,11 @@ export default function TopBar() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", sm: "block" }, cursor: "pointer" }}
+            onClick={handleGoToMainPage}
+            color="white"
           >
-            <Link href="/" color="white" underline="none">
-              Antropov IT Blog
-            </Link>
+            Antropov IT Blog
           </Typography>
           <Search>
             <SearchIconWrapper>
