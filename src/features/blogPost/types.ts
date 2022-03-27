@@ -9,10 +9,6 @@ export interface BlogPost {
 	isDeleted?: boolean;
 }
 
-export interface FetchBlogPostResponse {
-  blogPost: BlogPost;
-}
-
 export interface FetchBlogPostsResponse {
   blogPosts: BlogPost[];
 }

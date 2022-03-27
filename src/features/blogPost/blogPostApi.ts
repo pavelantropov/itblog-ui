@@ -3,7 +3,6 @@ import {
   BlogPost,
   CreateBlogPostRequest,
   CreateBlogPostResponse,
-  FetchBlogPostResponse,
   FetchBlogPostsResponse,
 } from "./types";
 
