@@ -1,9 +1,12 @@
 import * as React from "react";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import {
+  Box, //
+  Button,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { createBlogPost } from "./blogPostApi";
+import TagsInput from "../input/TagsInput";
 
 export default function CreateBlogPost() {
   const [title, setTitle] = React.useState("");

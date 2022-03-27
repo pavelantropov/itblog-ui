@@ -4,7 +4,11 @@ import Layout from "./features/layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import CreateBlogPost from "./features/blogPost/CreateBlogPost";
 import BlogPostsList from "./features/blogPost/BlogPostsList";
-import { ThemeProvider, createTheme, useMediaQuery } from "@mui/material";
+import {
+  ThemeProvider, //
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 
 function App() {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");

@@ -1,7 +1,9 @@
-import Link from "@mui/material/Link";
-import Chip from "@mui/material/Chip";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+import {
+  Chip, //
+  Divider,
+  Link,
+  Typography,
+} from "@mui/material";
 import { BlogPost } from "./types";
 
 export default function BlogPostPreview(blogPost: BlogPost) {
@@ -13,13 +15,13 @@ export default function BlogPostPreview(blogPost: BlogPost) {
       <Typography variant="body2">
         Posted:{" "}
         {blogPost?.creationDate
-          ? blogPost.creationDate.toLocaleString()
+          ? blogPost.creationDate.toLocaleString() //
           : "-"}
       </Typography>
       <Typography variant="body2" mb={2}>
         Last update:{" "}
         {blogPost?.lastUpdateDate
-          ? blogPost.lastUpdateDate.toLocaleString()
+          ? blogPost.lastUpdateDate.toLocaleString() //
           : "-"}
       </Typography>
       <Typography variant="body1" mb={1.5}>
