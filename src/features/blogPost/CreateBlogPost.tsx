@@ -24,6 +24,7 @@ export default function CreateBlogPost() {
     createBlogPost({
       title,
       body,
+      tags,
     });
   };
 
