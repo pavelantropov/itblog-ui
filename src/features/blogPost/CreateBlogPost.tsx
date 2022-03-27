@@ -11,6 +11,7 @@ import TagsInput from "../input/TagsInput";
 export default function CreateBlogPost() {
   const [title, setTitle] = React.useState("");
   const [body, setBody] = React.useState("");
+  const [tags, setTags] = React.useState<string[]>([]);
 
   const handleChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -56,7 +57,10 @@ export default function CreateBlogPost() {
           onChange={handleChangeBody}
           fullWidth
         />
-        <TagsInput />
+        <TagsInput
+          tags={tags}
+          setTags={setTags}
+        />
         <Button variant="contained" onClick={handlePost}>
           Post
         </Button>

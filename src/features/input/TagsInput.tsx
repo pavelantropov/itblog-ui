@@ -1,14 +1,19 @@
+import React from "react";
 import {
   Box, //
   Chip,
   Stack,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
 
 interface TagProps {
   tagName: string;
   handleRemove: Function;
+}
+
+interface TagsInputProps {
+  tags: string[];
+  setTags: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const Tag = ({
@@ -40,9 +45,11 @@ const Tag = ({
   );
 };
 
-export default function TagsInput() {
-  const [tags, setTags] = useState<string[]>([]);
-  const [inputTag, setInputTag] = useState("");
+export default function TagsInput({
+  tags, //
+  setTags,
+}: TagsInputProps) {
+  const [inputTag, setInputTag] = React.useState("");
 
   const handleChangeInputTag = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputTag(event.target.value);
