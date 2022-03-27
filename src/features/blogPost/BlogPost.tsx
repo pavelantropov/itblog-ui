@@ -2,7 +2,7 @@ import {
   Chip, //
   Typography,
 } from "@mui/material";
-import * as React from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { fetchBlogPost } from "./blogPostApi";
 import { BlogPost } from "./types";

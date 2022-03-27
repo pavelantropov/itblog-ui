@@ -1,8 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { styled, alpha } from "@mui/material/styles";
 import {
   AppBar, //
   Box,
+  Divider,
   IconButton,
   InputBase,
   Menu,
@@ -15,7 +16,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import CreateIcon from "@mui/icons-material/Create";
-import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router";
 
 const Search = styled("div")(({ theme }) => ({
