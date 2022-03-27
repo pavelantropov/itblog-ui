@@ -59,7 +59,7 @@ export default function CreateBlogPost() {
           fullWidth
         />
         <TagsInput
-          tags={tags}
+          tags={tags} //
           setTags={setTags}
         />
         <Button variant="contained" onClick={handlePost}>
