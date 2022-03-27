@@ -55,6 +55,7 @@ export default function CreateBlogPost() {
           variant="standard"
           fullWidth
         />
+        <TagsInput />
         <Button variant="contained" onClick={handlePost}>
           Post
         </Button>
