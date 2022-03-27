@@ -1,17 +1,20 @@
-import { Cancel } from "@mui/icons-material";
 import {
   Box, //
+  Chip,
   Stack,
   TextField,
-  Typography,
 } from "@mui/material";
 import { useState } from "react";
 
 interface TagProps {
   tagName: string;
+  handleRemove: Function;
 }
 
-const Tag = ({ tagName }: TagProps) => {
+const Tag = ({
+  tagName, //
+  handleRemove: handleRemoveTag,
+}: TagProps) => {
   return (
     <Box
       sx={{
@@ -49,6 +52,10 @@ export default function TagsInput() {
     }
   };
 
+  const handleRemoveTag = (tagName: string) => {
+    setTags(tags.filter((tag) => tag !== tagName));
+  };
+
   return (
     <Box>
       <TextField
@@ -69,6 +76,7 @@ export default function TagsInput() {
                   <Tag
                     key={"tag_" + index} //
                     tagName={tag}
+                    handleRemove={handleRemoveTag}
                   />
                 ))}
             </Box>
