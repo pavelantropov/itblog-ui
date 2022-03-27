@@ -20,6 +20,7 @@ export interface FetchBlogPostsResponse {
 export interface CreateBlogPostRequest {
   title: string;
   body: string;
+  tags: string[];
 }
 
 export interface CreateBlogPostResponse {}

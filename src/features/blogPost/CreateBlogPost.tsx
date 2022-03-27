@@ -11,6 +11,7 @@ import TagsInput from "../input/TagsInput";
 export default function CreateBlogPost() {
   const [title, setTitle] = React.useState("");
   const [body, setBody] = React.useState("");
+  const [tags, setTags] = React.useState<string[]>([]);
 
   const handleChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
@@ -23,6 +24,7 @@ export default function CreateBlogPost() {
     createBlogPost({
       title,
       body,
+      tags,
     });
   };
 
@@ -48,12 +50,17 @@ export default function CreateBlogPost() {
         />
         <TextField
           id="body-input"
-          label="Write something..."
+          placeholder="Write something..."
+          variant="outlined"
           multiline
+          minRows={12}
           value={body}
           onChange={handleChangeBody}
-          variant="standard"
           fullWidth
+        />
+        <TagsInput
+          tags={tags}
+          setTags={setTags}
         />
         <Button variant="contained" onClick={handlePost}>
           Post
