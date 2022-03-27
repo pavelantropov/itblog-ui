@@ -48,11 +48,12 @@ export default function CreateBlogPost() {
         />
         <TextField
           id="body-input"
-          label="Write something..."
+          placeholder="Write something..."
+          variant="outlined"
           multiline
+          minRows={12}
           value={body}
           onChange={handleChangeBody}
-          variant="standard"
           fullWidth
         />
         <TagsInput />
