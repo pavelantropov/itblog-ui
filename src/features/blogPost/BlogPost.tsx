@@ -2,14 +2,14 @@ import {
   Chip, //
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchBlogPost } from "./blogPostApi";
 import { BlogPost } from "./types";
 
 export default function BlogPostPage() {
   const { blogPostId } = useParams();
-  const [blogPost, setBlogPost] = React.useState<BlogPost>();
+  const [blogPost, setBlogPost] = useState<BlogPost>();
 
   React.useEffect(() => {
     fetchBlogPost(blogPostId!).then((res) => setBlogPost(res));

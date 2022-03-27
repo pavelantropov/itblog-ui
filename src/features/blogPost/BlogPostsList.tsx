@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { fetchBlogPosts } from "./blogPostApi";
 import BlogPostPreview from "./BlogPostPreview";
 import { BlogPost } from "./types";
 
 export default function BlogPostsList() {
-  const [blogPosts, setBlogPosts] = React.useState<BlogPost[]>([]);
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
 
   React.useEffect(() => {
     fetchBlogPosts().then((res) => setBlogPosts(res.blogPosts));

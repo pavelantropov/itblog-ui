@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box, //
   Button,
@@ -9,9 +9,9 @@ import { createBlogPost } from "./blogPostApi";
 import TagsInput from "../input/TagsInput";
 
 export default function CreateBlogPost() {
-  const [title, setTitle] = React.useState("");
-  const [body, setBody] = React.useState("");
-  const [tags, setTags] = React.useState<string[]>([]);
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState<string[]>([]);
 
   const handleChangeTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
