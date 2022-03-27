@@ -30,8 +30,11 @@ const Tag = ({
           margin: "0 0.5rem 0 0",
         }}
       >
-        <Typography>{tagName}</Typography>
-        <Cancel sx={{ cursor: "pointer" }} />
+        <Chip
+          label={tagName}
+          onDelete={() => handleRemoveTag(tagName)}
+          sx={{ cursor: "pointer" }}
+        />
       </Stack>
     </Box>
   );
